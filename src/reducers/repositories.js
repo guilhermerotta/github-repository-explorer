@@ -25,14 +25,6 @@ const selectedRepo = (state = -1, action = {}) => {
 const byId = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.LOAD_REPOS:
-      /*return {
-        ...state,
-        ...action.repositories.reduce((obj, rawRepo) => {
-          const repo = new Repository(rawRepo);
-          obj[repo.getId()] = repo.serialize();
-          return obj;
-        }, {})
-      };*/
       return action.repositories.reduce((obj, rawRepo) => {
         const repo = new Repository(rawRepo);
         obj[repo.getId()] = repo.serialize();
@@ -45,13 +37,12 @@ const byId = (state = {}, action) => {
 
 const byOrgId = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.LOAD_REPOS:
-      return state;
     case actionTypes.SET_SORT_REPOS_CRITERIA:
       return {
         ...state,
         [action.orgId]: {
-          orderBy: action.criteria
+          orderBy: action.criteria,
+          dataType: action.dataType
         }
       };
     default:
@@ -81,8 +72,18 @@ export const getRepoOrderByCriteria = (state, org) => {
 export const getVisibleRepositories = (state, org) => state.allRepos
   .slice()
   .sort((repoA, repoB) => {
-    const criteria = getRepoOrderByCriteria(state, org);
-    return state.byId[repoB][criteria] - state.byId[repoA][criteria];
+    const criteria = state.byOrgId[org.getId()];
+    if(criteria) {
+      const criteriaA = state.byId[repoA][criteria.orderBy];
+      const criteriaB = state.byId[repoB][criteria.orderBy];
+      if(criteria.dataType === 'date') {
+        const dateA = new Date(criteriaA);
+        const dateB = new Date(criteriaB);
+        return dateB - dateA;
+      }
+      return criteriaB - criteriaA;
+    }
+    return null;
   })
   .map((id) => getRepository(state, id));
 

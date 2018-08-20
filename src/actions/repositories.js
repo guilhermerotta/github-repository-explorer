@@ -13,10 +13,11 @@ const setLoadingRepos = (loading) => ({
   loading
 });
 
-export const setSortReposCriteria = (orgId, criteria) => ({
+export const setSortReposCriteria = (orgId, criteria, dataType) => ({
   type: actionTypes.SET_SORT_REPOS_CRITERIA,
   orgId,
-  criteria
+  criteria,
+  dataType
 });
 
 export const selectRepository = (repoId) => ({

@@ -15,7 +15,6 @@ export const searchTerm = (state = '', action) => {
   switch (action.type) {
     case actionTypes.SET_SEARCH_TERM:
       return action.orgName;
-
     default:
       return state;
   }

@@ -1,6 +1,7 @@
 export const SORT_OPTIONS = {
-  'Star Gazers': { value: 'star_gazers' },
-  'Forks': { value: 'forks_count' }
+  'Star Gazers': { value: 'stargazers_count', dataType: 'number' },
+  'Forks': { value: 'forks_count', dataType: 'number' },
+  'Date': { value: 'updated_at', dataType: 'date' }
 };
 
 export default class Repository {

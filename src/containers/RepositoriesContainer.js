@@ -32,7 +32,8 @@ class RepositoriesContainer extends Component {
 
   sortGrid(evt, data) {
     const { currentOrg, actions } = this.props;
-    actions.setSortReposCriteria(currentOrg.getId(), SORT_OPTIONS[data.name].value);
+    const option = SORT_OPTIONS[data.name];
+    actions.setSortReposCriteria(currentOrg.getId(), option.value, option.dataType);
   }
 
   render() {
