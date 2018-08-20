@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f4f4;
+}
+
+.org-container {
+  margin-left: 2em;
+}
+
+.org-card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.org-card button {
+  margin-left: 25px !important;
+}
+
+.repo-container {
+  margin: 0 1em;
+}
+
+.panel-container > div + div {
+  margin-top: 20px;
+}
+
+.panel-container div.menu,
+.repo-container div.menu {
+  background-color: #e0e1e2 !important;
+}
+
+.empty-repos,
+.empty-orgs,
+.empty-favorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-repos {
+  height: 500px;
+}
+
+.empty-orgs,
+.empty-favorites {
+  height: 208px;
+}
+
+.repo-card-counts-info {
+  display: flex;
+  justify-content: space-between;
+}

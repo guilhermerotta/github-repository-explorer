@@ -1,0 +1,40 @@
+.homepage > img {
+    width: 50vw !important;
+}
+
+.homepage > h1 {
+    font-size: 7vw !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .homepage > img {
+        width: 13vw !important;
+    }
+
+    .homepage > h1 {
+        font-size: 2.5vw !important;
+    }
+}
+
+.homepage {
+    min-height: 100vh;
+    background-color: #24292e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage > img {
+    opacity: 0.8;
+}
+
+.homepage > h1 {
+    color: white !important;
+    opacity: 0.8;
+    margin-bottom: 30px !important;
+}
+
+.homepage > .search-input > div {
+    width: 345px;
+}
