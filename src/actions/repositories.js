@@ -27,11 +27,11 @@ export const selectRepository = (repoId) => ({
 
 export const fetchRepositories = (org) =>
   (dispatch) => {
-    console.log('####### INSIDE CALL TO GET REPOS ######');
     dispatch(setLoadingRepos(true));
     gitHubApi.repos.getForOrg({
       org,
-      type: 'public'
+      type: 'public',
+      per_page: 100
     }).then(({ data }) => {
       dispatch(loadRepos(data));
       dispatch(setLoadingRepos(false));

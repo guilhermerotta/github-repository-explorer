@@ -18,14 +18,12 @@ class RepositoriesContainer extends Component {
 
   componentDidMount() {
     const { actions, searchTerm } = this.props;
-    console.log('MOUNTED REPOSITORIES, LOADING');
     actions.fetchRepositories(searchTerm);
   }
 
   componentDidUpdate(prevProps) {
     const { actions, currentOrg } = this.props;
     if (prevProps.currentOrg && prevProps.currentOrg.getId() !== currentOrg.getId()) {
-      console.log('REPOS CHANGED, RELOADING');
       actions.fetchRepositories(currentOrg.getLogin());
     }
   }

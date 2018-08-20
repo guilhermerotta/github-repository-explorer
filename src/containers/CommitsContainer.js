@@ -15,14 +15,12 @@ class CommitsContainer extends Component {
 
   componentDidMount() {
     const { actions, selectedRepo } = this.props;
-    console.log('MOUNTED COMMITS, LOADING');
     actions.fetchCommits(selectedRepo.getOwner(), selectedRepo.getName());
   }
 
   componentDidUpdate(prevProps) {
     const { actions, selectedRepo } = this.props;
     if (prevProps.selectedRepo.getId() !== selectedRepo.getId()) {
-      console.log('COMMITS CHANGED, RELOADING!');
       actions.fetchCommits(selectedRepo.getOwner(), selectedRepo.getName());
     }
   }

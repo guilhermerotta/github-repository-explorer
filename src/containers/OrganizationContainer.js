@@ -12,14 +12,12 @@ class OrganizationContainer extends Component {
   componentDidMount() {
     const { actions, searchTerm } = this.props;
     this.toggleFavoriteOrg = this.toggleFavoriteOrg.bind(this);
-    console.log('MOUNTED ORGS, LOADING');
     actions.fetchOrganization(searchTerm);
   }
 
   componentDidUpdate(prevProps) {
     const { actions, searchTerm } = this.props;
     if (prevProps.searchTerm !== searchTerm) {
-      console.log('ORG CHANGED, RELOADING!');
       actions.fetchOrganization(searchTerm);
     }
   }

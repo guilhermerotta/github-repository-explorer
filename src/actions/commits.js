@@ -15,11 +15,9 @@ const setLoadingCommits = (loading) => ({
 
 export const fetchCommits = (owner, repo) =>
   (dispatch) => {
-    console.log('####### INSIDE CALL TO GET COMMITS ######');
     dispatch(setLoadingCommits(true));
-    gitHubApi.repos.getCommits({ owner, repo })
+    gitHubApi.repos.getCommits({ owner, repo, per_page: 50 })
       .then(({ data }) => {
-        console.log(data);
         dispatch(loadCommits(data));
         dispatch(setLoadingCommits(false));
       }).catch(() => {

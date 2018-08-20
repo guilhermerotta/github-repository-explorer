@@ -1,5 +1,4 @@
 export const saveStateToLocalStorage = (state) => {
-  console.log('persisting state!');
   try {
     const asString = JSON.stringify(state);
     localStorage.setItem('githubExplorerState', asString)
