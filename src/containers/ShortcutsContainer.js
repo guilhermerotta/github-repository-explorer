@@ -37,7 +37,8 @@ class ShortcutsContainer extends Component {
       <div className='panel-container'>
         <ShortcutsPanel title='Favorite Organizations'
                         items={favoriteOrgs.map(transformData)}
-                        empty={emptyFavorites}/>
+                        empty={emptyFavorites}
+                        actions={actions}/>
         <ShortcutsPanel title='Recent Organizations'
                         items={recentOrgs.map(transformData)}
                         empty={emptyOrgs}
