@@ -19,4 +19,12 @@ export const loadStateFromLocalStorage = () => {
   }
 };
 
+export const parseApiMessage = (messageObj) => {
+  try {
+    return JSON.parse(messageObj).message;
+  } catch (e) {
+    return messageObj;
+  }
+};
+
 

@@ -3,7 +3,7 @@ import { Button, Message } from "semantic-ui-react";
 
 const ErrorMessage = ({ message, onClose }) =>
   message ? (
-    <Message negative>
+    <Message className='error-message' negative>
       <Message.Header>Error</Message.Header>
       <p>{message}</p>
       <Button size='small' onClick={onClose}>

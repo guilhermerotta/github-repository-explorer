@@ -39,6 +39,10 @@ body {
   margin: 0 1em;
 }
 
+.error-message {
+  margin: 1em !important;
+}
+
 .panel-container > div + div {
   margin-top: 20px;
 }

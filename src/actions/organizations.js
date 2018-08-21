@@ -1,6 +1,7 @@
 import GitHubApi from '@octokit/rest';
 import * as actionTypes from './actionTypes';
 import { setErrorMessage } from "./index";
+import { parseApiMessage } from "../utils/Utils";
 
 const gitHubApi = new GitHubApi();
 
@@ -34,6 +35,6 @@ export const fetchOrganization = (org) =>
       }).catch((e) => {
       dispatch(loadOrg({}));
       dispatch(setLoadingOrg(false));
-      dispatch(setErrorMessage(e.message));
+      dispatch(setErrorMessage(parseApiMessage(e.message)));
     })
   };

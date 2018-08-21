@@ -17,8 +17,10 @@ class RepositoriesContainer extends Component {
   }
 
   componentDidMount() {
-    const { actions, searchTerm } = this.props;
-    actions.fetchRepositories(searchTerm);
+    const { actions, searchTerm, currentOrg } = this.props;
+    if(!currentOrg) {
+      actions.fetchRepositories(searchTerm);
+    }
   }
 
   componentDidUpdate(prevProps) {
