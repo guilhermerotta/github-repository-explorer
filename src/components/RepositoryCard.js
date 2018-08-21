@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import { Card, Icon, Image } from "semantic-ui-react";
 
-export const RepositoryCard = ({ repository, onClick }) => (
-  <Card onClick={onClick}>
+export const RepositoryCard = ({ repository, onClick, selected }) => (
+  <Card color={selected ? 'green' : null } onClick={onClick}>
     <Card.Content>
       <Image src={repository.getAvatarUrl()} floated='left' size='mini'/>
       <Card.Header>{repository.getName()}</Card.Header>

@@ -37,7 +37,7 @@ class RepositoriesContainer extends Component {
   }
 
   render() {
-    const { actions, repositories, loadingRepos, orderBy } = this.props;
+    const { actions, repositories, loadingRepos, orderBy, selectedRepo } = this.props;
 
     return (
       <div>
@@ -60,6 +60,7 @@ class RepositoriesContainer extends Component {
           <RepositoryList>
             {repositories.map((repository) =>
               <RepositoryCard key={repository.getId()}
+                              selected={repository.getId() === selectedRepo}
                               onClick={() => actions.selectRepository(repository.getId())}
                               repository={repository}/>
             )}
@@ -80,6 +81,7 @@ function mapStateToProps(state) {
   return {
     loadingRepos: state.repositories.loadingRepos,
     repositories: getVisibleRepositories(state),
+    selectedRepo: state.repositories.selectedRepo,
     orderBy: getRepoOrderByCriteria(state),
     currentOrg: getCurrentOrganization(state.organizations),
     searchTerm: state.searchTerm
