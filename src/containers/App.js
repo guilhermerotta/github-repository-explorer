@@ -23,7 +23,7 @@ const App = ({ actions, searchTerm, loadingOrg, selectedRepo }) => {
 
   return (
     <div>
-      <Menu inverted borderless attached='top'>
+      <Menu className='menu-container' inverted borderless attached='top'>
         <Container>
           <Menu.Item>
             <Image size='mini' src={gitHubImg} style={{ marginRight: '1.5em' }}/>

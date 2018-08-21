@@ -11,6 +11,16 @@ body {
   width: 345px;
 }
 
+.menu-container .item:first-child {
+  display: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .menu-container .item:first-child {
+    display: flex !important;
+  }
+}
+
 .org-container {
   margin-left: 2em;
 }
