@@ -18,7 +18,7 @@ http://guilherme-github-explorer.surge.sh/
 ## Deployment
 Please view https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment for more details.
 ### On Node.js
-The easiest way is to install serve:
+The easiest way is to install `serve`:
 ```
 npm install -g serve
 serve -s build
