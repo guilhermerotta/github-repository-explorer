@@ -15,6 +15,12 @@ http://guilherme-github-explorer.surge.sh/
 - Semantic UI React (http://react.semantic-ui.com)
 - GitHub API Client for Node.js (https://octokit.github.io/rest.js/)
 
+## Build
+```
+npm install
+npm run build
+```
+
 ## Deployment
 Please view https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment for more details.
 ### On Node.js
