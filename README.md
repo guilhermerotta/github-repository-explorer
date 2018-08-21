@@ -1,6 +1,8 @@
 # GitHub Repository Explorer
 Single Page Application to view an organization's repositories and its latest commits on GitHub. Local Storage is used to save application state on the client.
 
+http://guilherme-github-explorer.surge.sh/
+
 ## Features
 - Search by organization to list its repositories (max 100)
 - Sort (desc) repositories by star gazers count, forks count or update date
