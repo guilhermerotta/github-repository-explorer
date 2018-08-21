@@ -51,7 +51,7 @@ class RepositoriesContainer extends Component {
   }
 
   matchesCriteria(term, searchCriteria) {
-    return (term || '').toLocaleLowerCase().indexOf(searchCriteria) >= 0;
+    return (term || '').toLowerCase().indexOf(searchCriteria.toLowerCase()) >= 0;
   }
 
   render() {
