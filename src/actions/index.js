@@ -8,3 +8,8 @@ export const setSearchTerm = (orgName) => ({
   type: actionTypes.SET_SEARCH_TERM,
   orgName
 });
+
+export const setErrorMessage = (message) => ({
+  type: actionTypes.SET_ERROR_MSG,
+  message
+});

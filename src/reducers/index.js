@@ -20,9 +20,19 @@ export const searchTerm = (state = '', action) => {
   }
 };
 
+export const errorMessage = (state = '', action) => {
+  switch (action.type) {
+    case actionTypes.SET_ERROR_MSG:
+      return action.message;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   organizations,
   repositories,
   commits,
-  searchTerm
+  searchTerm,
+  errorMessage
 });

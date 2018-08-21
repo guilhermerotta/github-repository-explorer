@@ -51,13 +51,8 @@ class RepositoriesContainer extends Component {
             <Menu.Item key={option}
                        name={option}
                        active={SORT_OPTIONS[option].value === orderBy}
-                       onClick={this.sortGrid} />
+                       onClick={this.sortGrid}/>
           ))}
-          {/*<Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
-          </Menu.Menu>*/}
         </Menu>
         <Segment attached loading={loadingRepos}>
           <RepositoryList>

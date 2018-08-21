@@ -11,8 +11,9 @@ import ShortcutsContainer from './ShortcutsContainer';
 import Homepage from "../components/Homepage";
 import SearchInput from "../components/SearchInput";
 import CommitsContainer from "./CommitsContainer";
+import ErrorMessage from "../components/ErrorMessage";
 
-const App = ({ actions, searchTerm, loadingOrg, selectedRepo }) => {
+const App = ({ actions, searchTerm, loadingOrg, selectedRepo, errorMessage }) => {
   if (!searchTerm) {
     return (
       <Homepage actions={actions}/>
@@ -34,6 +35,7 @@ const App = ({ actions, searchTerm, loadingOrg, selectedRepo }) => {
           </Menu.Item>
         </Container>
       </Menu>
+      <ErrorMessage message={errorMessage} onClose={() => actions.setErrorMessage(null)}/>
       <div className='org-container'>
         <OrganizationContainer/>
       </div>
@@ -59,7 +61,8 @@ function mapStateToProps(state) {
   return {
     searchTerm: state.searchTerm,
     loadingOrg: state.organizations.loadingOrg,
-    selectedRepo: state.repositories.selectedRepo
+    selectedRepo: state.repositories.selectedRepo,
+    errorMessage: state.errorMessage
   };
 }
 

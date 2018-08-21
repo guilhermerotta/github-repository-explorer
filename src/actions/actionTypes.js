@@ -6,9 +6,9 @@ export const SET_LOADING_REPOS = 'SET_LOADING_REPOS';
 export const SET_LOADING_COMMITS = 'SET_LOADING_COMMITS';
 export const SET_SORT_REPOS_CRITERIA = 'SET_SORT_REPOS_CRITERIA';
 export const SELECT_REPO = 'SELECT_REPO';
-// export const FILTER_REPOS = 'FILTER_REPOS';
 export const LOAD_ORG = 'LOAD_ORG';
 export const LOAD_REPOS = 'LOAD_REPOS';
 export const LOAD_COMMITS = 'LOAD_COMMITS';
+export const SET_ERROR_MSG = 'SET_ERROR_MSG';
 
 

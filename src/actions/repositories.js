@@ -1,5 +1,6 @@
 import GitHubApi from '@octokit/rest';
 import * as actionTypes from './actionTypes';
+import { setErrorMessage } from "./index";
 
 const gitHubApi = new GitHubApi();
 
@@ -35,8 +36,9 @@ export const fetchRepositories = (org) =>
     }).then(({ data }) => {
       dispatch(loadRepos(data));
       dispatch(setLoadingRepos(false));
-    }).catch(() => {
+    }).catch((e) => {
       dispatch(loadRepos([]));
       dispatch(setLoadingRepos(false));
+      dispatch(setErrorMessage(e.message));
     });
   };
