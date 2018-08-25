@@ -74,13 +74,17 @@ class RepositoriesContainer extends Component {
                        active={SORT_OPTIONS[option].value === orderBy}
                        onClick={this.sortGrid}/>
           ))}
-          <Menu.Menu position='right'>
+          <Menu.Menu className='regular-only' position='right'>
             <Menu.Item>
               <Input icon='search' onChange={this.changeSearchCriteria} value={searchCriteria}
                      placeholder={`Search ${repositories.length} repositories`}/>
             </Menu.Item>
           </Menu.Menu>
         </Menu>
+        <Segment className='mobile-only' textAlign='center' basic attached>
+          <Input fluid icon='search' onChange={this.changeSearchCriteria} value={searchCriteria}
+                 placeholder={`Search ${repositories.length} repositories`}/>
+        </Segment>
         <Segment attached loading={loadingRepos}>
           <RepositoryList>
             {repositories

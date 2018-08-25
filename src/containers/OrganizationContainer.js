@@ -29,15 +29,15 @@ class OrganizationContainer extends Component {
 
   render() {
     const { organization, loadingOrg, isFavorite } = this.props;
+    const favButton = organization.getId() !== -1 &&
+      (<Button toggle active={isFavorite} size='small'
+               onClick={this.toggleFavoriteOrg}>
+        {isFavorite ? 'Unfavorite' : 'Favorite'}
+      </Button>);
     return organization ?
       <Segment basic compact loading={loadingOrg}>
         <div className='org-card'>
-          <OrganizationCard organization={organization}/>
-          {organization.getId() !== -1 &&
-          <Button toggle active={isFavorite} size='large'
-                  onClick={this.toggleFavoriteOrg}>
-            {isFavorite ? 'Unfavorite' : 'Favorite'}
-          </Button>}
+          <OrganizationCard organization={organization} favButton={favButton}/>
         </div>
       </Segment>
       : null;

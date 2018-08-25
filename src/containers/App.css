@@ -15,9 +15,23 @@ body {
   display: none !important;
 }
 
+.mobile-only {
+  display: block !important;
+}
+
+.regular-only {
+  display: none !important;
+}
+
 @media only screen and (min-width: 768px) {
   .menu-container .item:first-child {
     display: flex !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+  .regular-only {
+    display: block !important;
   }
 }
 
@@ -27,8 +41,8 @@ body {
 
 .org-card {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
+  margin: 15px 0;
 }
 
 .org-card button {
