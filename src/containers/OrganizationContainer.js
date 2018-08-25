@@ -29,7 +29,7 @@ class OrganizationContainer extends Component {
 
   render() {
     const { organization, loadingOrg, isFavorite } = this.props;
-    const favButton = organization.getId() !== -1 &&
+    const favButton = organization && organization.getId() !== -1 &&
       (<Button toggle active={isFavorite} size='small'
                onClick={this.toggleFavoriteOrg}>
         {isFavorite ? 'Unfavorite' : 'Favorite'}
